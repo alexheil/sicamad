@@ -1,0 +1,85 @@
+<header class="main-color-background">
+  <nav>
+    <ul>
+      <li><%= link_to @category.title, category_path(@category), class: "black-links" %></li>
+      <li><%= link_to "View on Amazon", @product.link, class: "black-links" %></li>
+      <% if Product.exists?(@product.id + 1) %>
+      <li> <%= link_to "< Next - #{Product.find(@product.id + 1).title.truncate(25)}", category_product_path(Category.find(Product.find(@product.id + 1).category_id), Product.find(@product.id + 1)), class: "black-links" %></li>
+      <% end %>
+      <% if Product.exists?(@product.id - 1) %>
+      <li><%= link_to "#{Product.find(@product.id - 1).title.truncate(25)} -  Previous >", category_product_path(Category.find(Product.find(@product.id - 1).category_id), Product.find(@product.id - 1)), class: "black-links" %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>
+
+<div class="wrapper">
+  <div class="container">
+
+    <% if admin_signed_in? %>
+      <div>
+        <%= link_to "Edit product", edit_category_product_path  %> // <%= link_to "Delete product", category_product_path, data: { confirm: "Delete #{@product.title}?" }, method: :delete %>
+      </div>
+    <% end %>
+
+    <div class="two">
+      <div class="one-space">
+        <a href="<%= @product.link %>"><img srcset="<%= @product.image %>" width="100%" height="auto" /></a>
+      </div>
+    </div>
+    <div class="two">
+      <div class="one-space product-title">
+        <%= link_to @product.title, @product.link %>
+      </div>
+      <div class="one-space product-price">
+        $<%= @product.price %>
+      </div>
+      <div class="one-space product-description">
+        <%= sanitize(@product.description) %>
+      </div>
+      <div class="view-on-amazon-container">
+        <%= link_to "View on Amazon", @product.link %>
+      </div>
+    </div>
+
+    <div class="two center">
+      <% if Product.exists?(@product.id + 1) %>
+      <div class="view-on-amazon-container">
+        <%= link_to "< Next - #{Product.find(@product.id + 1).title.truncate(25)}", category_product_path(Category.find(Product.find(@product.id + 1).category_id), Product.find(@product.id + 1)) %>
+      </div>
+      <% end %>
+    </div>
+    <div class="two center">
+      <% if Product.exists?(@product.id - 1) %>
+      <div class="view-on-amazon-container">
+        <%= link_to "#{Product.find(@product.id - 1).title.truncate(25)} -  Previous >", category_product_path(Category.find(Product.find(@product.id - 1).category_id), Product.find(@product.id - 1)) %>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="categories-title">
+      Other products in <%= link_to @category.title, category_path(@category) %>
+    </div>
+
+    <% @category.products.take(4).each do |product| %>
+      <div class="four">
+        <div class="one-space">
+          <a href="<%= product.link %>"><img srcset="<%= product.image %>" width="100%" height="auto" /></a>
+        </div>
+        <div class="one-space product-title">
+          <%= link_to product.title, product.link %>
+        </div>
+        <div class="one-space product-price">
+          $<%= product.price %>
+        </div>
+        <div class="one-space">
+          <%= sanitize(product.description).truncate(150) %>
+        </div>
+        <div class="one-space">
+          <%= link_to "View details...", category_product_path(@category, product) %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>

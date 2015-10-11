@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="container">
+
+    <div class="form-slate">
+      <%= form_for(@product, url: category_products_path) do |f| %>
+        <div class="field">
+          <%= f.text_field :title, placeholder: "Title", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :image, placeholder: "Image URL", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :link, placeholder: "Amazon link", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :price, placeholder: "Price", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_area :description, placeholder: "Description", class: "text-area" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Create product", class: "submit-button" %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

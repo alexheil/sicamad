@@ -1,0 +1,59 @@
+<header style="background: url('<%= @category.image %>') no-repeat fixed" class="category-header">
+  <nav>
+    <div class="logo">
+      <%= link_to "[−]", root_url %>
+    </div>
+    <ul>
+      <li><%= link_to 'categories', categories_path %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'sign in', new_user_session_path %></li>
+        <li><%= link_to 'register', new_user_registration_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+  <div class="category-title">
+    [<%= @category.title.downcase %>]
+  </div>
+  <div class="category-description">
+    <%= @category.description %>
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="container">
+
+    <% if admin_signed_in? %>
+      <div>
+        <%= link_to "New Product", new_category_product_path(@category) %>
+      </div>
+      <div>
+        <%= link_to "Edit Category", edit_category_path(@category)  %>
+      </div>
+      <div>
+        <%= link_to "Delete Category", category_path, data: { confirm: "Delete #{@category.title}?" }, method: :delete %>
+      </div>
+    <% end %>
+
+    <% if @category.products.any? %>
+      <% @category.products.each do |product| %>
+        <div class="four">
+          <div class="one-space">
+            <a href="<%= product.link %>"><img srcset="<%= product.image %>" width="100%" height="auto" /></a>
+          </div>
+          <div class="one-space product-title">
+            <%= link_to product.title, product.link %>
+          </div>
+          <div class="one-space product-price">
+            $<%= product.price %>
+          </div>
+          <div class="one-space">
+            <%= sanitize(product.description).truncate(150) %>
+          </div>
+          <div class="one-space">
+            <%= link_to "View details...", category_product_path(@category, product) %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

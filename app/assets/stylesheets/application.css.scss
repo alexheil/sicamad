@@ -1,0 +1,546 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$main-color: #ff6733;
+$accent-color1: #00cc64;
+$my-black: #212121;
+$normal-font: Georgia, "Times New Roman", Times, serif;
+$fancy-font: 'Open Sans', Helvetica, arial, sans-serif;
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  font-family: $fancy-font;
+  color: $my-black;
+}
+
+a {
+  text-decoration: none;
+  color: $main-color;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+    color: $accent-color1;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+  }
+}
+
+.background {
+  background: url('http://pcwallart.com/images/skyline-cast-wallpaper-2.jpg') no-repeat center center fixed;
+  background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* ****************************** HEADER ****************************** */
+
+header {
+  width: 100%;
+  height: auto;
+  nav {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    ul {
+      display: inline-block;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        font-family: $fancy-font;
+        padding: 2vh 2vw;
+        position: relative;
+        margin-left: 1vw;
+        a {
+          padding: 2vh 2vw;
+          color: #fff;
+          -webkit-transition: .3s;
+          -moz-transition: .3s;
+          -o-transition: .3s;
+          &:hover {
+            -webkit-transition: .3s;
+            -moz-transition: .3s;
+            -o-transition: .3s;
+            color: $main-color;
+          }
+        }
+        &:first-child {
+          margin-left: 0vw;
+        }
+      }
+    }
+  }
+}
+
+.home-header {
+  background-image: image-url('buffalo.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.home-site-title {
+  padding: 20vh 0 8vh 0;
+  font-size: 7em;
+  text-align: center;
+  a {
+    color: #fff;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    &:hover {
+      -webkit-transition: .3s;
+      -moz-transition: .3s;
+      -o-transition: .3s;
+      color: $main-color;
+    }
+  }
+}
+
+.home-site-tagline {
+  padding: 0 0 20vh 0;
+  font-size: 3em;
+  text-align: center;
+  color: #fff;
+}
+
+.logo {
+  padding: 2vh 0 0 0;
+  font-size: 1.25em;
+  color: #fff;
+  a {
+    color: #fff;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    &:hover {
+      -webkit-transition: .3s;
+      -moz-transition: .3s;
+      -o-transition: .3s;
+      color: $main-color;
+    }
+  }
+}
+
+.main-color-background {
+  background: $main-color;
+}
+
+.black-links {
+  color: #fff;
+  webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+  webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  color: $accent-color1;
+  }
+}
+
+/* ***************************** SPACE ****************************** */
+
+.two {
+  width: 47%;
+  margin: 3vh 1%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.four {
+  width: 22%;
+  margin: 3vh 1%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.one-space {
+  margin: 1vh 0;
+}
+
+.center {
+  text-align: center;
+}
+
+/* **************************** CATEGORIES ************************ */
+
+.categories-header {
+  background: image-url('buffalo.jpg')  no-repeat fixed;
+  background-size: 100%;
+}
+
+.categories-title {
+  margin: 3vh 0;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.category-header {
+  background-size: 100%;
+}
+
+.category-title {
+  padding: 15vh 0 8vh 0;
+  font-size: 7em;
+  text-align: center;
+  color: #fff;
+}
+
+.category-description {
+  padding: 0 0 15vh 0;
+  font-size: 3em;
+  text-align: center;
+  color: #fff;
+}
+
+/* ************************** PRODUCTS ************************* */
+
+.product-title {
+  font-size: 1.25em;
+}
+
+.product-price {
+  font-size: 1.25em;
+  color: $accent-color1;
+}
+
+.product-description {
+  word-break: break-word;
+  white-space: pre-line;
+}
+
+.view-on-amazon-container {
+  margin: 5vh 0;
+  a {
+    padding: 2vh 5vw;
+    background-color: $main-color;
+    box-sizing: border-box;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    color: #fff;
+    &:hover {
+      -webkit-transition: .3s;
+      -moz-transition: .3s;
+      -o-transition: .3s;
+      background:$accent-color1;
+      box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    }
+  }
+}
+
+/* ************************** FORMS ********************** */
+
+.form-background {
+  background: url('http://pcwallart.com/images/skyline-cast-wallpaper-2.jpg') no-repeat center center fixed;
+  background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  height: 100vh;
+}
+
+.form-slate {
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.65);
+  margin: 0 auto;
+  padding: 1vh 1vw;
+}
+
+.field {
+  padding: 1vh 0;
+}
+
+::-webkit-input-placeholder {
+  text-align: right;
+  color: #fff;
+}
+
+:-moz-placeholder {
+  text-align: right;
+  color: #fff;
+}
+
+::-moz-placeholder {
+  text-align: right;
+  color: #fff;
+}
+
+:-ms-input-placeholder {
+  text-align: right;
+  color: #fff;
+}
+
+.text-field {
+  width: 100%;
+  font-family: $fancy-font;
+  font-size: 16px;
+  padding: 10px;
+  background: $main-color;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  display: inline-block;
+  box-sizing: border-box;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  color: #fff;
+  &:focus {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    background:$accent-color1;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  }
+}
+
+.text-area {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  height: 40vh;
+  background: $main-color;
+  font-family: $fancy-font;
+  font-size: 16px;
+  padding: 10px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  display: inline-block;
+  box-sizing: border-box;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  color: #fff;
+  &:focus {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    background:$accent-color1;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  }
+}
+
+.remember-me {
+  font-family: $fancy-font;
+}
+
+.actions {
+  width: 100%;
+  padding: 1vh 0;
+}
+
+.delete-account {
+  text-align: center;
+  padding-top: 10vh;
+  a {
+    color: #fff;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    &:hover {
+      -webkit-transition: .3s;
+      -moz-transition: .3s;
+      -o-transition: .3s;
+      color: $main-color;
+    }
+  }
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px 0px 7px 0px;
+  text-align: center;
+  font-family: $fancy-font;
+  font-size: 1.3em;
+  background-color: $accent-color1;
+  border-bottom: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    background:$accent-color1;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  }
+}
+
+.shared-links {
+  font-family: $fancy-font;
+  padding-top: 2vh;
+  padding-bottom: 4vh;
+}
+
+.form-links {
+  padding: 5px 0 5px 0;
+}
+
+#error_explanation {
+  color: #f00;
+  font-family: $fancy-font;
+  ul {
+      padding: 5px 0 5px 0;
+      list-style: none;
+      line-height: 30px;
+  }
+}
+
+/* ************************** FOOTER ********************** */
+
+.home-footer {
+  nav {
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  margin: 0 auto;
+  padding: 2vh 2vw;
+  box-sizing: border-box;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      font-family: $fancy-font;
+      padding: .5vh 0;
+      position: relative;
+      a {
+        padding: .5vh 0;
+        color: #fff;
+        -webkit-transition: .3s;
+        -moz-transition: .3s;
+        -o-transition: .3s;
+          &:hover {
+          -webkit-transition: .3s;
+          -moz-transition: .3s;
+          -o-transition: .3s;
+          color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+
+  .home-site-title {
+    padding: 25vh 0 5vh 0;
+    font-size: 5em;
+  }
+
+  .home-site-tagline {
+    padding: 0 0 25vh 0;
+    font-size: 2em;
+  }
+
+  .category-title {
+    padding: 10vh 0 5vh 0;
+    font-size: 5em;
+  }
+
+  .category-description {
+    padding: 0 0 10vh 0;
+    font-size: 2em;
+  }
+
+  .form-slate {
+    width: 50%;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+
+  header {
+    nav {
+      width: 100%;
+    }
+  }
+
+  .home-site-title {
+    padding: 15vh 0;
+    font-size: 4em;
+  }
+
+  .home-site-tagline {
+    padding: 0 0 15vh 0;
+    font-size: 2em;
+  }
+
+  .category-title {
+    padding: 3vh 0;
+    font-size: 2.5em;
+  }
+
+  .category-description {
+    padding: 0 0 3vh 0;
+    font-size: 1.25em;
+  }
+
+  .categories-title {
+    text-align: center;
+  }
+
+  .two {
+    width: 100%;
+    text-align: center;
+    margin: 3vh 0;
+  }
+
+  .four {
+    width: 47%;
+  }
+
+  .form-slate {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+
+  .four {
+    width: 100%;
+    text-align: center;
+    margin: 3vh 0;
+  }
+
+}
