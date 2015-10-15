@@ -102,13 +102,12 @@ header {
 }
 
 .home-header {
-  background-image: image-url('buffalo.jpg');
-  background-repeat: no-repeat;
+  background: image-url('http://pcwallart.com/images/skyline-cast-wallpaper-2.jpg')  no-repeat fixed;
   background-size: 100%;
 }
 
 .home-site-title {
-  padding: 20vh 0 8vh 0;
+  padding: 15vh 0 8vh 0;
   font-size: 7em;
   text-align: center;
   a {
@@ -126,7 +125,7 @@ header {
 }
 
 .home-site-tagline {
-  padding: 0 0 20vh 0;
+  padding: 0 0 15vh 0;
   font-size: 3em;
   text-align: center;
   color: #fff;
@@ -151,23 +150,29 @@ header {
 }
 
 .main-color-background {
-  background: $main-color;
+  background: $my-black;
 }
 
 .black-links {
-  color: #fff;
-  webkit-transition: .3s;
+  color: $accent-color1;
+  -webkit-transition: .3s;
   -moz-transition: .3s;
   -o-transition: .3s;
   &:hover {
-  webkit-transition: .3s;
+  -webkit-transition: .3s;
   -moz-transition: .3s;
   -o-transition: .3s;
-  color: $accent-color1;
+  color: $main-color;
   }
 }
 
 /* ***************************** SPACE ****************************** */
+
+.columns {
+  -webkit-column-count: 5;
+  -mox-column-count: 5;
+  coulmn-count: 5;
+}
 
 .two {
   width: 47%;
@@ -177,10 +182,13 @@ header {
 }
 
 .four {
-  width: 22%;
+  width: 20%;
   margin: 3vh 1%;
   display: inline-block;
   vertical-align: top;
+  padding: 1vh 1vw;
+  border: 1px solid #aaa;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .one-space {
@@ -194,7 +202,6 @@ header {
 /* **************************** CATEGORIES ************************ */
 
 .categories-header {
-  background: image-url('buffalo.jpg')  no-repeat fixed;
   background-size: 100%;
 }
 
@@ -223,6 +230,13 @@ header {
 }
 
 /* ************************** PRODUCTS ************************* */
+
+.products {
+  display: inline-block;
+  padding: 1vh 1vw;
+  border: 1px solid #aaa;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
 
 .product-title {
   font-size: 1.25em;
@@ -426,32 +440,25 @@ header {
 
 /* ************************** FOOTER ********************** */
 
-.home-footer {
-  nav {
-  background-color: rgba(0, 0, 0, 0.65);
+footer {
   width: 100%;
-  margin: 0 auto;
-  padding: 2vh 2vw;
-  box-sizing: border-box;
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    li {
-      font-family: $fancy-font;
-      padding: .5vh 0;
-      position: relative;
-      a {
-        padding: .5vh 0;
-        color: #fff;
-        -webkit-transition: .3s;
-        -moz-transition: .3s;
-        -o-transition: .3s;
+  text-align: center;
+  font-size: .65em;
+  nav {
+    width: 50%;
+    margin: 0 auto;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        padding: 1vh .5vw;
+        position: relative;
+        a {
+          color: $my-black;
           &:hover {
-          -webkit-transition: .3s;
-          -moz-transition: .3s;
-          -o-transition: .3s;
-          color: $main-color;
+            color: #aaa;
           }
         }
       }
@@ -459,15 +466,33 @@ header {
   }
 }
 
+/* **************************** MISC ************************* */
+
+.desktop {
+  display: inline;
+}
+
+.mobile {
+  display: none;
+}
+
+/* **************************** MEDIA QUERIES ************************* */
+
 @media screen and (max-width: 1600px) {
 
+  .columns {
+    -webkit-column-count: 4;
+    -mox-column-count: 4;
+    coulmn-count: 4;
+  }
+
   .home-site-title {
-    padding: 25vh 0 5vh 0;
+    padding: 10vh 0 5vh 0;
     font-size: 5em;
   }
 
   .home-site-tagline {
-    padding: 0 0 25vh 0;
+    padding: 0 0 10vh 0;
     font-size: 2em;
   }
 
@@ -487,6 +512,17 @@ header {
 
 }
 
+@media screen and (max-width: 1000px) {
+
+  .columns {
+    -webkit-column-count: 3;
+    -mox-column-count: 3;
+    coulmn-count: 3;
+  }
+
+}
+
+
 @media screen and (max-width: 800px) {
 
   header {
@@ -496,12 +532,12 @@ header {
   }
 
   .home-site-title {
-    padding: 15vh 0;
+    padding: 3vh 0;
     font-size: 4em;
   }
 
   .home-site-tagline {
-    padding: 0 0 15vh 0;
+    padding: 0 0 3vh 0;
     font-size: 2em;
   }
 
@@ -525,12 +561,26 @@ header {
     margin: 3vh 0;
   }
 
+  .columns {
+    -webkit-column-count: 2;
+    -mox-column-count: 2;
+    coulmn-count: 2;
+  }
+
   .four {
     width: 47%;
   }
 
   .form-slate {
     width: 100%;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: inline;
   }
 
 }
@@ -541,6 +591,12 @@ header {
     width: 100%;
     text-align: center;
     margin: 3vh 0;
+  }
+
+  .columns {
+    -webkit-column-count: 1;
+    -mox-column-count: 1;
+    coulmn-count: 1;
   }
 
 }

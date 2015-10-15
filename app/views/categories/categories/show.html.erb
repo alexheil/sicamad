@@ -1,3 +1,5 @@
+<%= provide(:title, sanitize(@category.title)) %>
+
 <header style="background: url('<%= @category.image %>') no-repeat fixed" class="category-header">
   <nav>
     <div class="logo">
@@ -5,10 +7,6 @@
     </div>
     <ul>
       <li><%= link_to 'categories', categories_path %></li>
-      <% if user_signed_in? %>
-        <li><%= link_to 'sign in', new_user_session_path %></li>
-        <li><%= link_to 'register', new_user_registration_path %></li>
-      <% end %>
     </ul>
   </nav>
   <div class="category-title">
@@ -24,13 +22,7 @@
 
     <% if admin_signed_in? %>
       <div>
-        <%= link_to "New Product", new_category_product_path(@category) %>
-      </div>
-      <div>
-        <%= link_to "Edit Category", edit_category_path(@category)  %>
-      </div>
-      <div>
-        <%= link_to "Delete Category", category_path, data: { confirm: "Delete #{@category.title}?" }, method: :delete %>
+        <%= link_to "New Product", new_category_product_path(@category) %> − <%= link_to "Edit Category", edit_category_path(@category)  %> − <%= link_to "Delete Category", category_path, data: { confirm: "Delete #{@category.title}?" }, method: :delete %>
       </div>
     <% end %>
 
@@ -55,5 +47,6 @@
         </div>
       <% end %>
     <% end %>
+
   </div>
 </div>

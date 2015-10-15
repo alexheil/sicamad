@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
 
   default_scope -> { order('id DESC') }
 
-  belongs_to :admin
+  belongs_to :category
 
   before_save :should_generate_new_friendly_id?, if: :slug_changed?
 

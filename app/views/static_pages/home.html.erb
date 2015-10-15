@@ -1,21 +1,41 @@
-<div class="background">
-
-<div class="home-site-title">
-  <%= link_to '[sicamad]', categories_path %>
-</div>
-<div class="home-site-tagline">
-  sick, amazing deals [−]
-</div>
-
-<footer class="home-footer">
+<header style="background: url('http://pcwallart.com/images/skyline-cast-wallpaper-2.jpg')  no-repeat fixed" class="categories-header">
   <nav>
     <ul>
       <li><%= link_to 'categories', categories_path %></li>
-      <% if user_signed_in? %>
-      <% else %>
-        <li><%= link_to 'sign in', new_user_session_path %></li>
-        <li><%= link_to 'register', new_user_registration_path %></li>
-      <% end %>
     </ul>
   </nav>
+  <div class="home-site-title">
+    <%= link_to '[sicamad]', categories_path %>
+  </div>
+  <div class="home-site-tagline">
+    sick, amazing deals [−]
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="container">
+
+    <% if @products.any? %>
+      <% @products.take(100).each do |product| %>
+        <div class="four">
+          <div class="one-space">
+            <a href="<%= product.link %>"><img srcset="<%= product.image %>" width="100%" height="auto" /></a>
+          </div>
+          <div class="one-space product-title">
+            <%= link_to product.title, product.link %>
+          </div>
+          <div class="one-space product-price">
+            $<%= product.price %>
+          </div>
+          <div class="one-space">
+            <%= sanitize(product.description).truncate(150) %>
+          </div>
+          <div class="one-space">
+            <%= link_to "View details...", category_product_path(Category.find(product.category_id), product) %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+  </div>
 </div>

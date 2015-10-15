@@ -1,5 +1,7 @@
-<header class="main-color-background">
-  <nav>
+<%= provide(:title, sanitize(@product.title)) %>
+
+<header class="main-color-background center">
+  <nav class="desktop">
     <ul>
       <li><%= link_to @category.title, category_path(@category), class: "black-links" %></li>
       <li><%= link_to "View on Amazon", @product.link, class: "black-links" %></li>
@@ -8,6 +10,18 @@
       <% end %>
       <% if Product.exists?(@product.id - 1) %>
       <li><%= link_to "#{Product.find(@product.id - 1).title.truncate(25)} -  Previous >", category_product_path(Category.find(Product.find(@product.id - 1).category_id), Product.find(@product.id - 1)), class: "black-links" %></li>
+      <% end %>
+    </ul>
+  </nav>
+  <nav class="mobile">
+    <ul>
+      <li><%= link_to @category.title, category_path(@category), class: "black-links" %></li>
+      <li><%= link_to "Amazon", @product.link, class: "black-links" %></li>
+      <% if Product.exists?(@product.id + 1) %>
+      <li> <%= link_to "<<<", category_product_path(Category.find(Product.find(@product.id + 1).category_id), Product.find(@product.id + 1)), class: "black-links" %></li>
+      <% end %>
+      <% if Product.exists?(@product.id - 1) %>
+      <li><%= link_to ">>>", category_product_path(Category.find(Product.find(@product.id - 1).category_id), Product.find(@product.id - 1)), class: "black-links" %></li>
       <% end %>
     </ul>
   </nav>
@@ -61,7 +75,7 @@
       Other products in <%= link_to @category.title, category_path(@category) %>
     </div>
 
-    <% @category.products.take(4).each do |product| %>
+    <% @category.products.take(8).each do |product| %>
       <div class="four">
         <div class="one-space">
           <a href="<%= product.link %>"><img srcset="<%= product.image %>" width="100%" height="auto" /></a>

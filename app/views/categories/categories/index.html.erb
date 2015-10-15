@@ -1,16 +1,10 @@
-<header class="categories-header">
+<%= provide(:title, "Categories") %>
+
+<header style="background: url('http://pcwallart.com/images/skyline-cast-wallpaper-2.jpg')  no-repeat fixed" class="categories-header">
   <nav>
     <div class="logo">
       <%= link_to "[−]", root_url %>
     </div>
-    <ul>
-      <li><%= link_to 'categories', categories_path %></li>
-      <% if user_signed_in? %>
-      <% else %>
-        <li><%= link_to 'sign in', new_user_session_path %></li>
-        <li><%= link_to 'register', new_user_registration_path %></li>
-      <% end %>
-    </ul>
   </nav>
   <div class="category-title">
     [categories]
