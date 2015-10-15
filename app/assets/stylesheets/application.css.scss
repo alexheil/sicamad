@@ -154,7 +154,7 @@ header {
 }
 
 .black-links {
-  color: $accent-color1;
+  color: #fff;
   -webkit-transition: .3s;
   -moz-transition: .3s;
   -o-transition: .3s;
@@ -167,12 +167,6 @@ header {
 }
 
 /* ***************************** SPACE ****************************** */
-
-.columns {
-  -webkit-column-count: 5;
-  -mox-column-count: 5;
-  coulmn-count: 5;
-}
 
 .two {
   width: 47%;

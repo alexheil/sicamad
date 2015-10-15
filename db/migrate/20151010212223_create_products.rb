@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.references :category
       t.string :title
       t.string :image
-      t.string :description
+      t.text :description
       t.string :price
       t.string :link
       t.string :slug

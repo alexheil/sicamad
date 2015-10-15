@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20151010212223) do
     t.integer  "category_id"
     t.string   "title"
     t.string   "image"
-    t.string   "description"
+    t.text     "description"
     t.string   "price"
     t.string   "link"
     t.string   "slug"
