@@ -56,7 +56,7 @@ a {
 }
 
 .container {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
 }
 
@@ -176,13 +176,14 @@ header {
 }
 
 .four {
-  width: 21%;
-  margin: 3vh 1%;
+  width: 17%;
+  margin: 3vh 1.25%;
   display: inline-block;
   vertical-align: top;
-  padding: 1vh .5vw;
+  padding: 1vh 1vw;
   border: 1px solid #aaa;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
 }
 
 .one-space {
@@ -224,13 +225,6 @@ header {
 }
 
 /* ************************** PRODUCTS ************************* */
-
-.products {
-  display: inline-block;
-  padding: 1vh .5vw;
-  border: 1px solid #aaa;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-}
 
 .product-title {
   font-size: 1.25em;
@@ -279,7 +273,6 @@ header {
 
 .form-slate {
   width: 30%;
-  background-color: rgba(255, 255, 255, 0.65);
   margin: 0 auto;
   padding: 1vh 1vw;
 }
@@ -474,12 +467,6 @@ footer {
 
 @media screen and (max-width: 1600px) {
 
-  .columns {
-    -webkit-column-count: 4;
-    -mox-column-count: 4;
-    coulmn-count: 4;
-  }
-
   .home-site-title {
     padding: 10vh 0 5vh 0;
     font-size: 5em;
@@ -502,6 +489,18 @@ footer {
 
   .form-slate {
     width: 50%;
+  }
+
+  .four {
+    width: 22%;
+  }
+
+}
+
+@media screen and (max-width: 1100px) {
+
+  .four {
+    width: 30%;
   }
 
 }
@@ -545,7 +544,7 @@ footer {
   }
 
   .four {
-    width: 45%;
+    width: 47%;
   }
 
   .form-slate {
@@ -568,12 +567,6 @@ footer {
     width: 100%;
     text-align: center;
     margin: 3vh 0;
-  }
-
-  .columns {
-    -webkit-column-count: 1;
-    -mox-column-count: 1;
-    coulmn-count: 1;
   }
 
 }
